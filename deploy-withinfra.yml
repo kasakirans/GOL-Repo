@@ -20,7 +20,7 @@
     ec2:
       instance_type: t2.micro
       key_name: AWSTest
-      image: ami-0ffab562e293a0446
+      image: ami-0affc2b52a67c64cc
       region: us-east-2
       group: launch-wizard-10
       count: 1
