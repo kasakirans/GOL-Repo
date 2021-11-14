@@ -22,7 +22,7 @@
       key_name: AWSTest
       image: ami-0ffab562e293a0446
       region: us-east-2
-      group: tomcat
+      group: launch-wizard-10
       count: 1
       wait: yes
       wait_timeout: 500
