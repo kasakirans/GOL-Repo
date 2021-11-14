@@ -19,8 +19,8 @@
   - name: launching ec2 instance
     ec2:
       instance_type: t2.micro
-      key_name: sankar-devops
-      image: ami-0741928d0ee9b6e66
+      key_name: AWSTest
+      image: ami-0ffab562e293a0446
       region: us-east-2
       group: launch-wizard-25
       count: 1
@@ -29,7 +29,7 @@
       instance_tags: 
             name: webserver
       assign_public_ip: yes
-      vpc_subnet_id: subnet-eb3cd196
+      vpc_subnet_id: subnet-e36251af
     register: ec2  
   - name: Add Instance IP into in-memory inventory file not into hosts file
     add_host: 
@@ -40,7 +40,7 @@
     loop: "{{ ec2.instances }}"
   - name: Wait for 180 seconds before tomcat setup play execution    
     wait_for:
-     timeout: 180
+     timeout: 120
 - name: tomcat setup
   hosts: tomcat
   become: true
